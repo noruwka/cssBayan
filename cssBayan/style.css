@@ -1,0 +1,122 @@
+body {
+    background: linear-gradient(45deg, #9766ff, #c5dde8);
+    min-height: 100vh;
+  }
+  
+  .container {
+    max-width: 50vw;
+    margin: 0 auto;
+  }
+  
+  .accordion__input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0;
+  }
+  
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  h1 {
+    -webkit-text-stroke: 0.02em rgb(200, 220, 228);
+  }
+  
+  .accordion__item {
+    width: 50vw;
+  }
+  
+  span {
+    width: 94%;
+  }
+  
+  .accordion__icon {
+    width: 4%;
+    margin-top: 2%;
+    transform: translateY(-50%);
+    transition: 0.5s;
+    margin-left: auto;
+    opacity: 0;
+  }
+  
+  .accordion__item:active > label .accordion__icon {
+    border-radius: 0.5em;
+    background-color: #9766ff;
+  }
+  .accordion__item:active > .accordion__item-title {
+    color: #9766ff;
+  }
+  
+  .accordion__input:checked ~ label .accordion__icon {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  
+  .accordion__content {
+    width: 0;
+    transform: scale(0.6);
+    transition: all 0.5s linear;
+    margin: 1rem auto 0 auto;
+  }
+  
+  .accordion__img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  .accordion__input:checked ~ label .accordion__content {
+    width: inherit;
+    transform: scale(1);
+  }
+  
+  .accordion__item-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    font-weight: bold;
+    box-shadow: 0 -5px 5px -5px #333;
+    cursor: pointer;
+    transition: 0.3s all;
+  }
+  
+  @media screen and (max-width: 1080px) {
+    html {
+      font-size: 15px;
+    }
+    @media screen and (max-width: 1180px) {
+      html {
+        font-size: 12px;
+      }
+    }
+    @media screen and (max-width: 568px) {
+      html {
+        font-size: 8px;
+      }
+    }
+  }
+  
+  @media (hover: hover) {
+    .accordion:hover .accordion__icon {
+      opacity: 1;
+    }
+  
+    .accordion:hover {
+      -webkit-text-stroke: 0.04em rgb(200, 220, 228);
+      transition: 0.2s;
+    }
+  
+    label:hover .accordion__content {
+      width: inherit;
+      transform: scale(1);
+    }
+  
+    .accordion__item:hover .accordion__icon {
+      transform: translateY(-50%) rotate(90deg);
+      transition: 0.9s;
+    }
+  }
